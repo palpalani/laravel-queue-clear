@@ -72,9 +72,9 @@ class QueueCountCommand extends Command {
 		$connection = $this->argument('connection') ?: $this->config->get('queue.default');
 		$queue = $this->argument('queue') ?: $this->config->get('queue.connections.' . $connection  . '.queue');
 
-		$this->info(sprintf('Clearing queue "%s" on "%s"', $queue, $connection));
+		$this->info(sprintf('Counting queue "%s" on "%s"', $queue, $connection));
 		$cleared = $this->clearer->count($connection, $queue);
-		$this->info(sprintf('Cleared %d jobs', $cleared));
+		$this->info(sprintf('Count: %d jobs', $cleared));
 	}
 
 }

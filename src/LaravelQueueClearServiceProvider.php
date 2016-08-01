@@ -22,9 +22,7 @@ class LaravelQueueClearServiceProvider extends ServiceProvider {
 			'Morrislaptop\LaravelQueueClear\Contracts\Clearer',
 			'Morrislaptop\LaravelQueueClear\Clearer'
 		);
-
 		$this->commands('Morrislaptop\LaravelQueueClear\Console\QueueClearCommand');
-
 		$this->commands('Morrislaptop\LaravelQueueClear\Console\QueueCountCommand');
 	}
 
