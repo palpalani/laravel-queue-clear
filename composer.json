@@ -1,5 +1,5 @@
 {
-    "name": "morrislaptop/laravel-queue-clear",
+    "name": "dena-a/laravel-queue-clear",
     "description": "Command for wiping your queues clear",
     "authors": [
         {
