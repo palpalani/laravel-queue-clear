@@ -35,13 +35,19 @@ class Clearer implements ClearerContract
 		return $count;
 	}
 
-	public function count($connection, $queue)
+	public function count($connection, $queue, $jobName)
 	{
 		$count = 0;
 		$connection = $this->manager->connection($connection);
 
 		while ($job = $connection->pop($queue)) {
-			$count++;
+			if($jobName == '') {
+                		$count++;
+                		continue;
+            		}
+		    	if($jobName == $job->getName()) {
+			    $count++;
+            		}
 		}
 
 		return $count;
