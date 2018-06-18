@@ -59,6 +59,7 @@ class QueueClearCommand extends Command {
 		return array(
 			array('connection', InputArgument::OPTIONAL, 'The connection of the queue driver to clear.'),
 			array('queue', InputArgument::OPTIONAL, 'The name of the queue / pipe to clear.'),
+			array('jobName', InputArgument::OPTIONAL, 'Display name of the Job.'),
 		);
 	}
 
@@ -71,9 +72,10 @@ class QueueClearCommand extends Command {
 	{
 		$connection = $this->argument('connection') ?: $this->config->get('queue.default');
 		$queue = $this->argument('queue') ?: $this->config->get('queue.connections.' . $connection  . '.queue');
+		$jobName = $this->argument('jobName') ?? '';
 
 		$this->info(sprintf('Clearing queue "%s" on "%s"', $queue, $connection));
-		$cleared = $this->clearer->clear($connection, $queue);
+		$cleared = $this->clearer->clear($connection, $queue, $jobName);
 		$this->info(sprintf('Cleared %d jobs', $cleared));
 	}
 
