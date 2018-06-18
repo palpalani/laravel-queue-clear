@@ -19,4 +19,16 @@ interface Clearer
 	 * @return int
 	 */
 	public function clear($connection, $queue, $jobName);
+	
+	
+	/**
+	 * Count all the jobs in the queue for connection. Returns
+	 * how many jobs were found
+	 *
+	 * @param $connection
+	 * @param $queue
+	 * @param $jobName
+	 * @return int
+	 */
+	public function count($connection, $queue, $jobName);
 }
