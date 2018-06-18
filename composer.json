@@ -17,12 +17,11 @@
         }
     },
     "minimum-stability": "stable",
-    ,
-  "extra": {
-    "laravel": {
-      "providers": [
-        "Morrislaptop\\LaravelQueueClear\\LaravelQueueClearServiceProvider"
-      ]
+    "extra": {
+      "laravel": {
+        "providers": [
+          "Morrislaptop\\LaravelQueueClear\\LaravelQueueClearServiceProvider"
+        ]
+      }
     }
-  }
 }
