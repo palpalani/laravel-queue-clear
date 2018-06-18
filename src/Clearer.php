@@ -22,7 +22,7 @@ class Clearer implements ClearerContract
 	/**
 	 * {@inheritDoc}
 	 */
-	public function clear($connection, $queue)
+	public function clear($connection, $queue, $jobName)
 	{
 		$count = 0;
 		$connection = $this->manager->connection($connection);
