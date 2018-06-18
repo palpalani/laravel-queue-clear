@@ -15,7 +15,8 @@ interface Clearer
 	 *
 	 * @param $connection
 	 * @param $queue
+	 * @param $jobName
 	 * @return int
 	 */
-	public function clear($connection, $queue);
+	public function clear($connection, $queue, $jobName);
 }
