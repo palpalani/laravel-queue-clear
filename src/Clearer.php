@@ -28,8 +28,10 @@ class Clearer implements ClearerContract
 		$connection = $this->manager->connection($connection);
 
 		while ($job = $connection->pop($queue)) {
-			$job->delete();
-			$count++;
+			if($jobName == $job->getName()) {
+				$job->delete();
+				$count++;
+			}
 		}
 
 		return $count;
